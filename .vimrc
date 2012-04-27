@@ -27,10 +27,12 @@ set hidden
 
 "Colour scheme
 set background=dark
+set t_Co=16
+let g:solarized_termcolors=16
 colorscheme solarized
 
 "Set font type and size. Depends on the resolution. Larger screens, prefer h20
-set guifont=Meslo LG M:h14
+set guifont=Meslo\ LG\ M:h20
 
 "Tab stuff
 set shiftwidth=4
@@ -152,19 +154,6 @@ nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
-
-"------------------------"
-"NERDTREE PLUGIN SETTINGS
-"------------------------"
-"Shortcut for NERDTreeToggle
-nmap <leader>nt :NERDTreeToggle <CR>
-
-"Show hidden files in NerdTree
-let NERDTreeShowHidden=1
-
-"autopen NERDTree and focus cursor in new document
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
 
 "Spelling corrects. Just for example. Add yours below.
 iab teh the
