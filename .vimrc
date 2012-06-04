@@ -149,44 +149,7 @@ if has("autocmd")
  augroup END
 endif
 
-" easier window navigation
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
-
-"Spelling corrects. Just for example. Add yours below.
-iab teh the
-iab Teh The
-
-" Get to home dir easier
-" <leader>hm is easier to type than :cd ~
-nmap <leader>hm :cd ~/ <CR>
-
-" Alphabetically sort CSS properties in file with :SortCSS
-:command! SortCSS :g#\({\n\)\@<=#.,/}/sort
-
-" Shortcut to opening a virtual split to right of current pane
-" Makes more sense than opening to the left
-nmap <leader>bv :bel vsp
-
 " Saves file when Vim window loses focus
 au FocusLost * :wa
 
-" Backups
-set backupdir=~/.vim/tmp/backup// " backups
-set directory=~/.vim/tmp/swap// " swap files
-set backup " enable backup
-
-" No more stretching for navigating files
-"noremap h ;
-"noremap j h
-"noremap k gj
-"noremap l gk
-"noremap ; l
-
 set showmatch " show matching brackets
-
-" print empty <a> tag
-map! ;h <a href=""></a><ESC>5hi
-
