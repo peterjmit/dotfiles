@@ -13,7 +13,7 @@ START_TYPE=headless
 POWER_OFF=acpipowerbutton
 
 usage() {
-    echo "Vboxme 1.0 - Bash script for managing virtual machines with virtualbox"
+    echo "Vboxme 1.0 - Helper script for managing virtual machines with virtualbox"
     echo "Author: Pete Mitchell <peterjmit@gmail.com>"
     echo
     echo "Usage: `basename $0` [arguments] [options]"
