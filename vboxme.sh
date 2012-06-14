@@ -16,17 +16,20 @@ usage() {
     echo "Vboxme 1.0 - Bash script for managing virtual machines with virtualbox"
     echo "Author: Pete Mitchell <peterjmit@gmail.com>"
     echo
-    echo "Usage: `basename $0` [options]"
+    echo "Usage: `basename $0` [arguments] [options]"
+    echo
+    echo "Arguments:"
+    echo "  -g         Start virtualbox in GUI mode instead of the default headless"
+    echo "  -p <type>  Power off method (default: acpipowerbutton)"
+    echo "  -z <path>  Provide absolute path to VBoxManage"
     echo
     echo "Options:"
     echo "  -s <name>  Start given virtualbox"
     echo "  -x <name>  Shutdown given virtualbox"
     echo "  -l         List available virtualboxes"
     echo "  -r         List running virtualboxes"
-    echo "  -g         Start virtualbox in GUI mode instead of the default headless"
-    echo "  -p         Type of power off (default: acpipowerbutton)"
     echo "  -h         This help message"
-    echo "  -z <path>  Provide absolute path to VBoxManage"
+
 }
 
 # Starts virtual box $VM_NAME
@@ -126,3 +129,5 @@ do
 done
 
 shift `expr $OPTIND - 1`
+
+usage
