@@ -130,4 +130,7 @@ done
 
 shift `expr $OPTIND - 1`
 
+# If none of the options are selected then display the usage
+# and exit with an error. Otherwise this script wont do anything
 usage
+exit 1
