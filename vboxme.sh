@@ -38,13 +38,13 @@ startvm() {
 
     # Exit with error if the virtualbox is already running
     runningvms | grep ${VM_NAME} >/dev/null && {
-        echo "${VM_NAME} is already running."
+        echo "${VM_NAME} is already running." >&2
         exit 1
     }
 
     # Start the vm in headless, if we fail then exit with error
     $MANAGE_CMD startvm "$VM_NAME" -type "$START_TYPE" >/dev/null || {
-        echo "Failed to start ${VM_NAME}."
+        echo "Failed to start ${VM_NAME}." >&2
         exit 2
     }
 
@@ -60,13 +60,13 @@ shutdownvm() {
 
     # Check the virtualbox is running, exit with error if it isn't
     runningvms | grep ${VM_NAME} >/dev/null || {
-        echo "${VM_NAME} is already stopped."
+        echo "${VM_NAME} is already stopped." >&2
         exit 1
     }
 
     # Try the power off button, exit with error if we can't power off
     $MANAGE_CMD controlvm "$VM_NAME" "$POWER_OFF" || {
-        echo "Failed to stop ${VM_NAME}."
+        echo "Failed to stop ${VM_NAME}." >&2
         exit 2
     }
 
