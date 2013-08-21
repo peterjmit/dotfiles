@@ -1,3 +1,6 @@
 #!/bin/sh
 
-rsync -av  home/ ~
+git submodule init
+git submodule update
+
+rsync -av --exclude '.git'  home/ ~
