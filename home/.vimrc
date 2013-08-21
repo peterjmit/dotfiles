@@ -152,4 +152,7 @@ endif
 " Saves file when Vim window loses focus
 au FocusLost * :wa
 
+" Wrap colums in git commits
+autocmd Filetype gitcommit setlocal spell textwidth=72
+
 set showmatch " show matching brackets

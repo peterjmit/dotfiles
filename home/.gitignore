@@ -4,4 +4,4 @@
 .project
 .settings/*
 .sass-cache/
-.rsync_cache/
+scratch.txt

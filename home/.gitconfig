@@ -1,7 +1,7 @@
 # LOCAL CONFIG
 [user]
     name =
-    email =
+    email = 
 
 # DO NOT EDIT BELOW THIS LINE
 [core]
@@ -38,7 +38,6 @@
 [alias]
     st = status
     ci = commit
-    cam = commit -am
     br = branch
     co = checkout
     df = diff
