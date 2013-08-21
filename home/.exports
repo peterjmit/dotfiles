@@ -1,0 +1,22 @@
+# paths
+export PATH=/usr/local/sbin:$PATH
+export PATH=/usr/local/share/npm/bin:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.rvm/bin:$PATH
+export PATH=./vendor/bin:$PATH
+export PATH=./bin:$PATH
+
+# Make vim the default editor
+export EDITOR="vim"
+export GIT_EDITOR='vim'
+
+# Always enable colored `grep` output
+export GREP_OPTIONS="--color=auto"
+
+# Link Homebrew casks in `/Applications` rather than `~/Applications`
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# Scala/java
+export SCALA_HOME=/usr/local/Cellar/scala/2.10.1/libexec
+export JAVA_HOME=$(/usr/libexec/java_home)
