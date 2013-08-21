@@ -24,7 +24,7 @@ plugins=(vagrant git-flow knife brew)
 
 source $ZSH/oh-my-zsh.sh
 
-for file in ~/.{exports,aliases}; do
+for file in ~/.{exports,aliases,localrc}; do
     [ -r "$file" ] && source "$file"
 done
 
