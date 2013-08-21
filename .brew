@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+# Adapted from https://github.com/mathiasbynens/dotfiles
+
+# Make sure we’re using the latest Homebrew
+brew update
+
+# Upgrade any already-installed formulae
+brew upgrade
+
+# Install GNU core utilities (those that come with OS X are outdated)
+brew install coreutils
+
+# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
+brew install findutils
+
+# Update bash version
+brew install bash
+
+# Install wget with IRI support
+brew install wget --enable-iri
+
+# dupes allows us to update os x tools
+brew tap homebrew/dupes
+brew install homebrew/dupes/grep
+
+# Updated PHP + tools
+brew tap josegonzalez/homebrew-php
+brew install php55
+brew install php55-intl
+brew install composer
+# Code quality tools
+# not sure if this works
+# brew install php-cs-fixer
+brew install php-code-sniffer
+brew install php-md
+brew install phpunit
+
+# node
+brew install node
+
+# Other utilities
+brew install git
+brew install ack
+brew install graphicsmagick
+brew install imagemagick
+brew install phantomjs
+# optional
+# brew install go
+# brew install android-sdk
+
+# Install me some apps!
+brew tap phinze/homebrew-cask
+brew install brew-cask
+
+function installcask() {
+    brew cask install "${@}" 2> /dev/null
+}
+
+installcask dropbox
+installcask google-chrome
+installcask google-chrome-canary
+installcask imagealpha
+installcask imageoptim
+installcask iterm2
+installcask miro-video-converter
+installcask sequel-pro
+installcask spectacle
+installcask sublime-text
+installcask the-unarchiver
+installcask tor-browser
+installcask transmission
+installcask virtualbox
+installcask vagrant
+installcask vlc
+
+# Remove outdated versions from the cellar
+brew cleanup
