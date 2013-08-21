@@ -24,9 +24,13 @@ plugins=(vagrant git-flow knife brew)
 
 source $ZSH/oh-my-zsh.sh
 
+# remove auto correct
+unsetopt correct_all
+
+# vim
+set -o vi
+bindkey -v
+
 for file in ~/.{exports,aliases,localrc}; do
     [ -r "$file" ] && source "$file"
 done
-
-# Customize to your needs...
-unsetopt correct_all

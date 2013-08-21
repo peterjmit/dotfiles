@@ -12,6 +12,7 @@ export PATH
 
 # Make vim the default editor
 export EDITOR="vim"
+export VISUAL=vim
 export GIT_EDITOR='vim'
 
 # Always enable colored `grep` output
