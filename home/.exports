@@ -6,6 +6,7 @@ PATH=$HOME/bin:$PATH
 PATH=$HOME/.rvm/bin:$PATH
 PATH=./vendor/bin:$PATH
 PATH=./bin:$PATH
+PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 
 export PATH
 
