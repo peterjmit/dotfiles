@@ -20,5 +20,10 @@ Bundle "bling/vim-airline"
 Bundle "altercation/vim-colors-solarized"
 Bundle "nathanaelkane/vim-indent-guides"
 
+" Text editing improvements
+Bundle "Shougo/neocomplcache"
+Bundle "tomtom/tcomment_vim"
+Bundle "terryma/vim-multiple-cursors"
+
 " Filetype plugin indent on is required by vundle
 filetype plugin indent on
