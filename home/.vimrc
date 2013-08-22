@@ -53,7 +53,6 @@ silent !mkdir ~/.vim/backups > /dev/null 2>&1
 set undodir=~/.vim/backups
 set undofile
 
-
 " ================ Indentation ======================
 
 set autoindent
@@ -72,6 +71,9 @@ set list listchars=tab:\ \ ,trail:·
 
 set nowrap       "Don't wrap lines
 set linebreak    "Wrap lines at convenient points
+
+" show matching brackets
+set showmatch
 
 " ================ Folds ============================
 
@@ -101,20 +103,6 @@ set sidescrolloff=15
 set sidescroll=1
 
 
-" ================ Look and feel ====================
-"Colour scheme
-set background=dark
-set t_Co=16
-let g:solarized_termcolors=16
-colorscheme solarized
-
-"Set font type and size.
-set guifont=Meslo\ LG\ M:h20
-
-" ================ Old stuff ====================
-"Map escape key to jj -- much faster
-imap jj <esc>
-
 " Source the vimrc file after saving it.
 if has("autocmd")
  augroup myvimrchooks
@@ -126,8 +114,3 @@ endif
 " Saves file when Vim window loses focus
 au FocusLost * :wa
 
-" Wrap colums in git commits
-autocmd Filetype gitcommit setlocal spell textwidth=72
-
-" show matching brackets
-set showmatch
