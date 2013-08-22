@@ -15,15 +15,26 @@ call vundle#rc()
 " let Vundle manage Vundle (required)
 Bundle "gmarik/vundle"
 
+" git
+Bundle "tjennings/git-grep-vim"
+Bundle "tpope/vim-fugitive"
+Bundle "tpope/vim-git"
+
 " Look and feel
 Bundle "bling/vim-airline"
 Bundle "altercation/vim-colors-solarized"
 Bundle "nathanaelkane/vim-indent-guides"
+Bundle "vim-scripts/TagHighlight"
 
 " Text editing improvements
 Bundle "Shougo/neocomplcache"
 Bundle "tomtom/tcomment_vim"
 Bundle "terryma/vim-multiple-cursors"
+
+"
+Bundle "scrooloose/syntastic.git"
+Bundle "kien/ctrlp.vim"
+Bundle "scrooloose/nerdtree.git"
 
 " Filetype plugin indent on is required by vundle
 filetype plugin indent on
