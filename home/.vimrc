@@ -1,147 +1,121 @@
-call pathogen#infect()
-
 "Forget compatibility with Vi. Who cares.
 set nocompatible
 
-"Enable filetypes
-filetype on
-filetype plugin on
-filetype indent on
-syntax on
 
-"Write the old file out when switching between files.
-set autowrite
+" ================ General Config ====================
 
-"Display current cursor position in lower right corner.
-set ruler
+set number                      "Line numbers are good
+set backspace=indent,eol,start  "Allow backspace in insert mode
+set history=1000                "Store lots of :cmdline history
+set showcmd                     "Show incomplete cmds down the bottom
+set showmode                    "Show current mode down the bottom
+set gcr=a:blinkon0              "Disable cursor blink
+set visualbell                  "No sounds
+set autoread                    "Reload files changed outside vim
 
-"Want a different map leader than \
-"set mapleader = ",";
-
-"Ever notice a slight lag after typing the leader key + command? This lowers
-"the timeout.
-set timeoutlen=500
-
-"Switch between buffers without saving
+" This makes vim act like all other editors, buffers can
+" exist in the background without being in a window.
+" http://items.sjbach.com/319/configuring-vim-right
 set hidden
 
+"turn on syntax highlighting
+syntax on
+
+" Change leader to a comma because the backslash is too far away
+" That means all \x commands turn into ,x
+" The mapleader has to be set before vundle starts loading all
+" the plugins.
+let mapleader=","
+set timeoutlen=500 " lower timeout for leader key
+
+" =============== Vundle Initialization ===============
+" Clone vundle if we don't already have it
+if !isdirectory(expand("~/.vim/bundle/vundle/.git"))
+    !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+endif
+" This loads all the plugins specified in ~/.vim/vundle.vim
+" Use Vundle plugin to manage all other plugins
+if filereadable(expand("~/.vim/vundles.vim"))
+  source ~/.vim/vundles.vim
+endif
+
+" ================ Turn Off Swap Files ==============
+
+set noswapfile
+set nobackup
+set nowb
+
+" ================ Persistent Undo ==================
+" Keep undo history across sessions, by storing in file.
+" Only works all the time.
+
+silent !mkdir ~/.vim/backups > /dev/null 2>&1
+set undodir=~/.vim/backups
+set undofile
+
+
+" ================ Indentation ======================
+
+set autoindent
+set smartindent
+set smarttab
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+set expandtab
+
+filetype plugin on
+filetype indent on
+
+" Display tabs and trailing spaces visually
+set list listchars=tab:\ \ ,trail:·
+
+set nowrap       "Don't wrap lines
+set linebreak    "Wrap lines at convenient points
+
+" ================ Folds ============================
+
+set foldmethod=indent   "fold based on indent
+set foldnestmax=3       "deepest fold is 3 levels
+set nofoldenable        "dont fold by default
+
+" ================ Completion =======================
+
+set wildmode=list:longest
+set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
+"set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+"set wildignore+=*vim/backups*
+"set wildignore+=*sass-cache*
+"set wildignore+=*DS_Store*
+"set wildignore+=vendor/rails/**
+"set wildignore+=vendor/cache/**
+"set wildignore+=*.gem
+"set wildignore+=log/**
+"set wildignore+=tmp/**
+"set wildignore+=*.png,*.jpg,*.gif
+
+" ================ Scrolling ========================
+
+set scrolloff=8         "Start scrolling when we're 8 lines away from margins
+set sidescrolloff=15
+set sidescroll=1
+
+
+" ================ Look and feel ====================
 "Colour scheme
 set background=dark
 set t_Co=16
 let g:solarized_termcolors=16
 colorscheme solarized
 
-"Set font type and size. Depends on the resolution. Larger screens, prefer h20
+"Set font type and size.
 set guifont=Meslo\ LG\ M:h20
 
-"Tab stuff
-set shiftwidth=4
-set softtabstop=4
-set expandtab
-
-"Show command in bottom right portion of the screen
-set showcmd
-
-"Show lines numbers
-set number
-
-"Prefer relative line numbering?
-"set relativenumber"
-
-"Indent stuff
-set smartindent
-set autoindent
-
-"Always show the status line
-set laststatus=2
-
-"Prefer a slightly higher line height
-set linespace=3
-
-"Better line wrapping
-set wrap
-set textwidth=79
-set formatoptions=qrn1
-
-"Set incremental searching"
-set incsearch
-
-"Highlight searching
-set hlsearch
-
-" case insensitive search
-set ignorecase
-set smartcase
-
-"Hard-wrap paragraphs of text
-nnoremap <leader>q gqip
-
-"Enable code folding
-set foldenable
-
-"Hide mouse when typing
-set mousehide
-
-"Shortcut to fold tags with leader (usually \) + ft
-nnoremap <leader>ft Vatzf
-
-"Opens a vertical split and switches over (\v)
-nnoremap <leader>v <C-w>v<C-w>l
-
-"Split windows below the current window.
-set splitbelow              
-
-" session settings
-set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help
-
-"Shortcut for editing  vimrc file in a new tab
-nmap <leader>ev :tabedit $MYVIMRC<cr>
-
-"Change zen coding plugin expansion key to shift + e
-let g:user_zen_expandabbr_key = '<C-e>'
-
-"Faster shortcut for commenting. Requires T-Comment plugin
-map <leader>c <c-_><c-_>
-
-"Saves time; maps the spacebar to colon
-nmap <space> :
-
-"Automatically change current directory to that of the file in the buffer
-autocmd BufEnter * cd %:p:h
-
-"Map code completion to , + tab
-imap <leader><tab> <C-x><C-o>
-
-" More useful command-line completion
-set wildmenu
-
-"Auto-completion menu
-set wildmode=list:longest
-
-"http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
-set completeopt=longest,menuone
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
-  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
-  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-
+" ================ Old stuff ====================
 "Map escape key to jj -- much faster
 imap jj <esc>
 
-"Delete all buffers (via Derek Wyatt)
-nmap <silent> ,da :exec "1," . bufnr('$') . "bd"<cr>
-
-"Bubble single lines (kicks butt)
-"http://vimcasts.org/episodes/bubbling-text/
-nmap <C-Up> ddkP
-nmap <C-Down> ddp
-
-"Bubble multiple lines
-vmap <C-Up> xkP`[V`]
-vmap <C-Down> xp`[V`]
-
-" Source the vimrc file after saving it. This way, you don't have to reload Vim to see the changes.
+" Source the vimrc file after saving it.
 if has("autocmd")
  augroup myvimrchooks
   au!
@@ -155,4 +129,5 @@ au FocusLost * :wa
 " Wrap colums in git commits
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
-set showmatch " show matching brackets
+" show matching brackets
+set showmatch
