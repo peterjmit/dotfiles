@@ -41,6 +41,7 @@ brew install node
 # Other utilities
 brew install git
 brew install ack
+brew install vim
 brew install graphicsmagick
 brew install imagemagick
 brew install phantomjs
