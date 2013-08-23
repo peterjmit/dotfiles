@@ -1,7 +1,8 @@
-# LOCAL CONFIG
-[user]
-    name =
-    email = 
+# User setting are configured by environment variables
+# in ~/.localrc
+# [user]
+#     name =
+#     email =
 
 # DO NOT EDIT BELOW THIS LINE
 [core]
