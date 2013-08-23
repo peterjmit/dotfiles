@@ -16,8 +16,15 @@ if has("gui_running")
   set lines=60
   set columns=190
 
-  set guifont=Inconsolata\ XL:h17,Inconsolata:h20,Monaco:h17
+  set guifont=Source\ Code\ Pro:h14
 else
   "dont load csapprox if we no gui support - silences an annoying warning
   let g:CSApprox_loaded = 1
+  " performance tweaks
+  set noshowmatch
+  set nocursorline
+  set nocursorcolumn
+  set lazyredraw
+  set scrolljump=8
+  let html_no_rendering=1
 endif
