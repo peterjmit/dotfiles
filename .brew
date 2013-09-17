@@ -40,6 +40,7 @@ brew install node
 
 # Other utilities
 brew install git
+brew install mercurial
 brew install ack
 brew install vim
 brew install macvim
