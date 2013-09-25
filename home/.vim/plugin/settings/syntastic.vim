@@ -9,4 +9,4 @@ let g:syntastic_quiet_warnings=0
 
 " Default let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
 let g:syntastic_php_checkers=['php', 'phpcs']
-let g:syntastic_php_phpcs_args="--report=csv --standard=PSR2 --ignore='*Spec.php'"
+let g:syntastic_php_phpcs_args="--report=csv --standard=PSR1 --ignore='*Spec.php'"

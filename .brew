@@ -27,6 +27,7 @@ brew install homebrew/dupes/grep
 brew tap josegonzalez/homebrew-php
 brew install php55
 brew install php55-intl
+brew install php55-xdebug
 brew install composer
 # Code quality tools
 # not sure if this works
