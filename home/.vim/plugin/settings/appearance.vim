@@ -4,6 +4,8 @@
 colorscheme solarized
 set background=dark
 
+set cursorline
+
 if has("gui_running")
   "tell the term has 256 colors
   set t_Co=256
@@ -22,7 +24,6 @@ else
   let g:CSApprox_loaded = 1
   " performance tweaks
   set noshowmatch
-  set nocursorline
   set nocursorcolumn
   set lazyredraw
   set scrolljump=8
