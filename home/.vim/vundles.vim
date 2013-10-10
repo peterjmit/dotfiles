@@ -38,6 +38,7 @@ Bundle "scrooloose/nerdtree.git"
 
 " Additional syntaxes
 Bundle "kchmck/vim-coffee-script"
+Bundle "Glench/Vim-Jinja2-Syntax"
 
 " Filetype plugin indent on is required by vundle
 filetype plugin indent on
