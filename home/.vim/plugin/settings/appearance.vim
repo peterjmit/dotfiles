@@ -4,6 +4,7 @@
 colorscheme solarized
 set background=dark
 
+" Highlight line and column
 set cursorline
 
 if has("gui_running")
