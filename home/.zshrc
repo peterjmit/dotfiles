@@ -16,7 +16,8 @@ compinit
 ZSH=$HOME/.oh-my-zsh
 
 # Theme
-ZSH_THEME="kphoen"
+# ZSH_THEME="kphoen"
+ZSH_THEME="arrow"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -28,9 +29,9 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
 # vim
-set -o vi
-bindkey -v
+# set -o vi
+# bindkey -v
 
 for file in ~/.{exports,aliases,localrc}; do
-    [ -r "$file" ] && source "$file"
+  [ -r "$file" ] && source "$file"
 done
