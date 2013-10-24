@@ -63,6 +63,10 @@ defaults write NSGlobalDomain KeyRepeat -int 0
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
+# mute all sounds, incl volume change feedback
+defaults write "com.apple.sound.beep.feedback" -int 0
+defaults write "com.apple.systemsound" "com.apple.sound.uiaudio.enabled" -int 0
+
 ###############################################################################
 # Screen                                                                      #
 ###############################################################################
