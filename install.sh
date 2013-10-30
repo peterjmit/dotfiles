@@ -13,6 +13,8 @@ curl -L https://get.rvm.io | bash -s stable --ruby
 # sync home dir
 ./sync_home.sh
 
-# install oh my zsh
-git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
+# install prezto
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "$HOME/.zprezto"
+
+# change default shell to zsh
 chsh -s /bin/zsh

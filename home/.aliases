@@ -1,4 +1,0 @@
-alias ls='ls -lh -G'
-
-# Symfony2 alias
-alias sf='php app/console'
