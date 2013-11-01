@@ -5,3 +5,5 @@
 .settings/*
 .sass-cache/
 scratch.txt
+.idea/
+*.wip
