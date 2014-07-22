@@ -34,7 +34,7 @@ brew install composer
 # not sure if this works
 # brew install php-cs-fixer
 brew install php-code-sniffer
-brew install php-md
+brew install phpmd
 brew install phpunit
 
 # node
