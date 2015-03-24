@@ -26,13 +26,11 @@ brew install homebrew/dupes/grep
 # Updated PHP + tools
 brew tap homebrew/versions
 brew tap homebrew/homebrew-php
-brew install php55
-brew install php55-intl
-brew install php55-xdebug
+brew install php56
+# brew install php56-xdebug
 brew install composer
 # Code quality tools
-# not sure if this works
-# brew install php-cs-fixer
+brew install php-cs-fixer
 brew install php-code-sniffer
 brew install phpmd
 brew install phpunit
