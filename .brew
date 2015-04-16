@@ -60,7 +60,6 @@ function installcask() {
 
 installcask dropbox
 installcask google-chrome
-installcask google-chrome-canary
 installcask imagealpha
 installcask imageoptim
 installcask iterm2
@@ -70,7 +69,6 @@ installcask spectacle
 installcask sublime-text
 installcask the-unarchiver
 installcask tor-browser
-installcask transmission
 installcask virtualbox
 installcask vagrant
 installcask vlc
